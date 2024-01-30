@@ -1,0 +1,20 @@
+﻿@model Elevator.Models.HomeModel
+
+@{
+    ViewData["Title"] = "Elevator";
+}
+<link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<div class="text-center">
+    <h1 class="display-4">Outside Elevator</h1>
+    <p>You are on floor number .</p>
+    <h1 class="display-4">@Html.DisplayFor(m => m.CurrentFloor)</h1>
+</div>
+<div id="BetweenFloor" runat="server" class="text-center">
+    <form asp-action="EnterElevator" asp-route-CurrentFloor="@Model.CurrentFloor">
+        <input type="submit" class="btn-success btn-lg" name="EnterFloorUp" value="Up" />
+    </form>
+    <form asp-action="EnterElevator" asp-route-CurrentFloor="@Model.CurrentFloor">
+        <input type="submit" class="btn-success btn-lg" name="EnterFloorDown" value="Down" />
+    </form>
+</div>
+

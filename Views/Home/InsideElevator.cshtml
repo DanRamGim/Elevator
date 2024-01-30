@@ -1,0 +1,122 @@
+﻿@model Elevator.Models.HomeModel
+
+@{
+    ViewData["Title"] = "Elevator";
+}
+<script>
+    .center {
+        margin - left: auto;
+        margin - right: auto;
+    }
+</script>
+<link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<div class="text-center">
+    <h1 class="display-4">Inside Elevator</h1>
+    <p>You are on floor number .</p>
+    <h1 class="display-4">@Html.DisplayFor(m => m.CurrentFloor)</h1>
+    <div class="text-center">
+        <table style="width: 40%; margin-left:auto; margin-right:auto;" class="center table-striped table-bordered text-lg-center align-middle">
+            <tbody>
+                <tr>
+                    <td>
+                        <div id="Floor1" style="margin-top:auto; margin-bottom:auto;" runat="server" class="text-center form-group">
+                            <form asp-action="GetOut" asp-route-SelectedFloor="1">
+                                <input type="submit" class="btn btn-primary btn-lg" name="GetOut" value="1" />
+                            </form>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="Floor2" style="margin-top:auto; margin-bottom:auto;" runat="server" class="text-center form-group">
+                            <form asp-action="GetOut" asp-route-SelectedFloor="2">
+                                <input type="submit" class="btn btn-primary btn-lg" name="GetOut" value="2" />
+                            </form>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="Floor3" style="margin-top:auto; margin-bottom:auto;" runat="server" class="text-center form-group">
+                            <form asp-action="GetOut" asp-route-SelectedFloor="3">
+                                <input type="submit" class="btn btn-primary btn-lg" name="GetOut" value="3" />
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="Floor4" style="margin-top:auto; margin-bottom:auto;" runat="server" class="text-center form-group">
+                            <form asp-action="GetOut" asp-route-SelectedFloor="4">
+                                <input type="submit" class="btn btn-primary btn-lg" name="GetOut" value="4" />
+                            </form>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="Floor5" style="margin-top:auto; margin-bottom:auto;" runat="server" class="text-center form-group">
+                            <form asp-action="GetOut" asp-route-SelectedFloor="5">
+                                <input type="submit" class="btn btn-primary btn-lg" name="GetOut" value="5" />
+                            </form>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="Floor6" style="margin-top:auto; margin-bottom:auto;" runat="server" class="text-center form-group">
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">
+                                6
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="Floor7" style="margin-top:auto; margin-bottom:auto;" runat="server" class="text-center form-group">
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">
+                                7
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="Floor8" style="margin-top:auto; margin-bottom:auto;" runat="server" class="text-center form-group">
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">
+                                8
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="Floor9" style="margin-top:auto; margin-bottom:auto;" runat="server" class="text-center form-group">
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">
+                                9
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <div id="Floor0" style="margin-top:auto; margin-bottom:auto;" runat="server" class="text-center form-group">
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">
+                                0
+                            </button>
+                        </div>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                The floor you selected does not exist, please try again.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

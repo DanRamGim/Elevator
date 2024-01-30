@@ -1,0 +1,19 @@
+﻿@model Elevator.Models.HomeModel
+
+@{
+    ViewData["Title"] = "Elevator";
+}
+<link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<div class="text-center">
+    <h1 class="display-4">Outside Elevator</h1>
+    <p>You are on floor number </p>
+    <h1 class="display-4">@Html.DisplayFor(m => m.CurrentFloor)</h1>
+</div>
+<div id="FirstFloor" runat="server" class="text-center">
+    <form asp-action="EnterElevator" asp-route-currentfloor="5">
+        <input type="submit" class="btn-success btn-lg" name="EnterLastFloor" value="Enter" />
+    </form>
+</div>
+
+
+
